@@ -196,7 +196,7 @@ if __name__ == "__main__":
             # Event handling
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    pass
 
             # Key handling
             keys = pygame.key.get_pressed()
@@ -250,17 +250,34 @@ if __name__ == "__main__":
         pygame.quit()
         sys.exit()
 
+    import os
+
     # Load background image
-    background = pygame.image.load("background.jpg")
-    background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+    try:
+        background = pygame.image.load("background.jpg")
+        background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+    except pygame.error:
+        print("Error: 'background.jpg' not found. Using a white background.")
+        background = pygame.Surface((WIDTH, HEIGHT))
+        background.fill(WHITE)
 
     # Load player image
-    player_image = pygame.image.load("player.png")
-    player_image = pygame.transform.scale(player_image, player_size)
+    try:
+        player_image = pygame.image.load("player.png")
+        player_image = pygame.transform.scale(player_image, player_size)
+    except pygame.error:
+        print("Error: 'player.png' not found. Using a red rectangle as the player.")
+        player_image = pygame.Surface(player_size)
+        player_image.fill(RED)
 
     # Load platform image
-    platform_image = pygame.image.load("platform.png")
-    platform_image = pygame.transform.scale(platform_image, (500, 100))
+    try:
+        platform_image = pygame.image.load("platform.png")
+        platform_image = pygame.transform.scale(platform_image, (500, 100))
+    except pygame.error:
+        print("Error: 'platform.png' not found. Using a blue rectangle as the platform.")
+        platform_image = pygame.Surface((500, 100))
+        platform_image.fill(BLUE)
 
     def draw_platforms():
         for platform in platforms:
