@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff; /* Fallback color if background image fails to load */
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.platform {
+    background-image: url('../images/platform.png');
+    background-size: cover;
+    position: absolute;
+}
+
+.player {
+    background-image: url('../images/player.png');
+    background-size: cover;
+    position: absolute;
+}
+
+.background {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure background is behind other elements */
+}

@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #87CEEB; /* Sky blue */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Game canvas */
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #FFFFFF; /* White background for the game */
+    border: 2px solid #000; /* Black border around the canvas */
+}
+
+/* Player styles */
+.player {
+    width: 50px;
+    height: 50px;
+    background-color: #FF0000; /* Red color for the player */
+    position: absolute;
+}
+
+/* Platform styles */
+.platform {
+    background-color: #8B4513; /* Brown color for platforms */
+    position: absolute;
+    height: 20px; /* Height of the platform */
+}
+
+/* Obstacle styles */
+.obstacle {
+    background-color: #0000FF; /* Blue color for obstacles */
+    position: absolute;
+}
